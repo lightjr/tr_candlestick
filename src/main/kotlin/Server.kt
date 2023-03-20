@@ -7,12 +7,13 @@ import org.http4k.routing.routes
 import org.http4k.server.Http4kServer
 import org.http4k.server.Netty
 import org.http4k.server.asServer
+import java.time.Duration
+import java.time.Instant
 
 class Server(
   port: Int = 9000,
 ) {
 
-  // TODO - invoke your implementation here
   lateinit var  service : CandlestickManager
 
 
@@ -31,7 +32,10 @@ class Server(
       ?: return Response(Status.BAD_REQUEST).body("{'reason': 'missing_isin'}")
 
     val body = jackson.writeValueAsBytes(service.getCandlesticks(isin))
-
     return Response(Status.OK).body(body.inputStream())
   }
+
+
+
+
 }

@@ -18,6 +18,8 @@ typealias Price = Double
 
 interface CandlestickManager {
   fun getCandlesticks(isin: String): List<Candlestick>
+  fun handleInstrumentEvent(instrument: Instrument,eventType: InstrumentEvent.Type)
+  fun handleQuoteEvent(quote: Quote)
 }
 
 data class Candlestick(

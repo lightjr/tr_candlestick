@@ -10,7 +10,7 @@ class MainTest {
 
   @Test
   fun `dummy test`() {
-    assertEquals(4, 2+1) 
+    assertEquals(4, 2+2)
   }
   
 }
